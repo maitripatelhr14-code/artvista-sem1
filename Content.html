@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ArtVista</title>
+<style>
+*{ 
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0f1724;
+    font-family: Arial, sans-serif;
+    color: #334155;
+}
+
+/* LOADING */
+#loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #14b6a6;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#main {
+    display: none;
+}
+
+/* LOGO */
+.style {
+    text-align: center;
+    color: #14b6a6;
+    font-family:"Segoe Print", cursive;
+    font-size: 45px;
+    margin: 20px 0;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin: 0px;
+}
+nav ul {
+    display: flex;
+    width: 100%; 
+    gap:40px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    box-shadow: 0 0 15px #14b6a6;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    background-color: #f8fafc;
+    gap: 40px;
+    
+}
+
+ul li {
+    background-color: #f8fafc;
+    
+}
+
+ul li a {
+    gap:0px;
+    color: #0f1724;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul li:hover {
+    background-color: #14b6a6;
+}
+
+ul li:hover a {
+    color: white;
+} 
+
+/* COMMON */
+.page-section {
+    width: 100%;
+}
+
+/* HOME */
+#homeSection {
+    text-align: center;
+    padding: 20px;
+}
+
+#homeSection h2 {
+    color: white;
+}
+
+#homeSection > p {
+    color: #cbd5e1;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.box {
+    width: 280px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px #14b6a6;
+}
+
+/* Heading color for each box */
+/* 1. Painting */
+.box:nth-child(1) h2 {
+    padding:30px;
+    background-color:#a62f03;
+    color:bisque !important;
+}
+/* 2. Artwork */
+.box:nth-child(2) h2 {
+    padding:30px;
+    background-color: rgb(202, 218, 233);
+    color: #0f1724 !important;
+}
+/* 3. Sketching */
+.box:nth-child(3) h2 {
+    padding:30px;
+    background-color: rgb(217, 213, 213);
+    color: rgb(56, 52, 52) !important;
+}
+/* 4. Sculpture */
+.box:nth-child(4) h2 {
+    padding:30px;
+    background-color: rgb(100, 76, 27);
+    color: rgb(56, 52, 52) !important;
+}
+/* 5. Pottery Ceramic Art */
+.box:nth-child(5) h2 {
+    padding:30px;
+    background-color: #e4bf45;
+    color: #045ab0 !important;
+}
+/* 6. Textile/Fiber Art */
+.box:nth-child(6) h2 {
+    padding:30px;
+    background-color:#0f4015;
+    color:#948553 !important;
+}
+/* 7. Printmaking */
+.box:nth-child(7) h2 {
+    padding:30px;
+    background-color: #404b55;
+    color:#ffff !important;
+}
+/* 8. Calligraphy */
+.box:nth-child(8) h2 {
+    padding:30px;
+    background-color: #ffff;
+    color:#334155 !important;
+}
+/* 9. Mixed Media Art */
+.box:nth-child(9) h2 {
+    padding:30px;
+    background-color: bisque;
+    color: #0f1724 !important;
+}
+/* 10. Digital Art */
+.box:nth-child(10) h2 {
+    padding:30px;
+    background-color: #0f1724;
+    color: #4870f5 !important;
+}
+/*--1. Painting - Ravi Raj Varma--*/
+.box:nth-child(1) {
+    background-color: #6b340d;
+    h3 {
+        background-color:#a62f03;
+        color:bisque;
+    }
+    h4 {
+        background-color:#a62f03;
+        color:bisque;
+    }
+}
+/*--2. Artwork - Vincent Van Gogh--*/
+.box:nth-child(2) {
+    background-color: #1E4D6B;
+    h3 {
+        background-color: rgb(202, 218, 233);
+        color:#051d2b;
+    }
+    h4 {
+        background-color: rgb(202, 218, 233);
+         color:#051d2b;
+    }
+}
+/*--3. Sketching - Sneha Patel--*/
+.box:nth-child(3) {
+    background-color: rgb(179, 179, 179);
+    h3 {
+        background-color: rgb(217, 213, 213);
+        color:rgb(56, 52, 52);
+    }
+    h4 {
+        background-color: rgb(217, 213, 213);
+        color:rgb(56, 52, 52);
+    }
+}
+/*--4. Sculpture - Ramkinkar Baij--*/
+.box:nth-child(4) {
+    background-color: #6a3d2b;
+    h3{ 
+        background-color: rgb(100, 76, 27);
+        color:#292E32;
+    }
+    h4 {
+         background-color: rgb(100, 76, 27);
+        color:#292E32;
+    }
+}
+/*--5. Pottery Ceramic Art - Jyotsna Bhatt--*/
+.box:nth-child(5) {
+    background-color: rgb(251, 230, 206);
+    h3{ 
+        background-color: #e4bf45;
+        color:#045ab0;
+    }
+    h4{ 
+        background-color:#e4bf45;
+        color:#045ab0;
+    }
+}
+/*--6. Textile/Fiber Art - Mrinalini Mukherjee--*/
+.box:nth-child(6) {
+    background-color:  #9B4F60;
+    h3{
+        background-color:#0f4015;
+        color:#948553;
+    }
+    h4 {
+        background-color:#0f4015;
+        color:#948553;
+    }
+}
+/*--7. Printmaking - Katsushika Hokusai--*/
+.box:nth-child(7) {
+    background-color: #b1d1cf;
+    h3{
+        background-color: #404b55;
+        color:#ffff;
+    }
+    h4{
+       background-color: #404b55;
+        color:#ffff;  
+    }
+}
+/*--8. Calligraphy - Xu Bing--*/
+.box:nth-child(8) {
+    background-color: #bf9d62;
+    h3 {
+        background-color: #ffff;
+        color:#334155;
+    }
+    h4 {
+        background-color: #ffff;
+        color:#334155;
+    }
+
+}
+/*--9. Mixed Media Art - Pablo Picasso--*/
+.box:nth-child(9) {
+    background-color: rgb(218, 218, 218);
+    h3 {
+        background-color: bisque;
+        color: #0f1724
+    }
+    h4 {
+        background-color: bisque;
+        color: #0f1724;
+    }
+}
+/*--10. Digital Art - Beeple--*/
+.box:nth-child(10) {
+    background-color: #045ab0;
+    h3 {
+        background-color: #0f1724;
+        color: #4870f5
+    }
+    h4 {
+        background-color: #0f1724;
+        color: #4870f5
+    }
+}
+/*--Heading inside boxes--*/
+.box h2 {
+    color: black !important
+}
+/*--Image--*/
+.box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/*--Description--*/
+.box h3:last-child {
+    color: #f8fafc;
+}
+/*--Remove brown background from paragraph--*/
+.box p {
+    background-color: transparent;
+}
+
+
+/* IMAGE */
+#imageSection {
+    display: none;
+    text-align: center;
+    padding: 30px;
+}
+
+#imageSection h2 {
+    color: white;
+}
+
+.image-box {
+    width: 600px;
+    max-width: 90%;
+    height: 100px;
+    margin: 20px auto;
+    background-color: #f8fafc;
+    border: 2px solid #14b6a6;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+
+    color: #0f1724;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #14b6a6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.image-box:hover {
+    background-color: #14b6a6;
+    color: white;
+    
+}
+.explore-link {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #0f1724;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.explore-link:hover {
+    color: #0f766e;
+    color:white;
+    text-decoration: none;
+}
+
+.square {
+    width: 130px;
+    height: 55px;
+
+    background-color: #ffffff;
+    border: 2px solid #14b6a6;
+    border-radius: 12px;
+
+    margin-left: 20px;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(-40px);
+
+    box-shadow: 0 0 10px #14b6a6;
+}
+
+.square a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+.square a:hover {
+    text-decoration: none;
+    color: white;
+}
+.square:hover {
+    text-decoration: none;
+    background-color:#0f766e;
+}
+
+/* ABOUT */
+#aboutSection {
+    display: none;
+    padding: 30px;
+}
+
+.about-box {
+    width: 600px;
+    max-width: 90%;
+    margin: auto;
+    padding: 30px;
+    background-color: #f8fafc;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 20px #14b6a6;
+}
+
+.about-box h2 {
+    color: #0f1724;
+}
+
+.about-box p {
+    line-height: 1.6;
+}
+
+.hidden-contact {
+    filter: blur(5px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hidden-contact.show {
+    filter: blur(0);
+}
+
+/* SIGN IN */
+ #signinSection {
+    display: none;
+    padding: 30px 15px 60px;
+}
+
+.signin-card {
+    width: 430px;
+    max-width: 95%;
+    min-height: 520px;
+    margin: auto;
+    background-color: #0f1724;
+    border: 1px solid #d7d7d7;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    text-align: left;
+}
+
+.signin-logo {
+    text-align: center;
+    color: #0f766e;
+    font-family: "Segoe Print", cursive;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.signin-card h2 {
+    text-align: center;
+    color: #0f1724;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 10px 0 15px;
+}
+
+.signin-description {
+    text-align: center;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* INPUT */
+.login-input {
+    width: 100%;
+    height: 55px;
+    padding: 0 15px;
+    border: 1px solid #b8b8b8;
+    border-radius: 8px;
+    font-size: 17px;
+    outline: none;
+}
+
+.login-input:focus {
+    order: 2px solid #14b6a6;
+}
+
+/* LINKS */
+.login-link {
+    color: #0f766e;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 14px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* CREATE ACCOUNT */
+.create-area {
+    margin-top: 80px;
+}
+
+/* BUTTON */
+.next-button {
+    background-color: #0f766e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    margin-top: 25px;
+}
+
+.next-button:hover {
+    background-color: #14b6a6;
+}
+
+/* BACK */
+.back-link {
+    clear: both;
+    padding-top: 30px;
+    color: #0f766e;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* MESSAGE */
+.message {
+    clear: both;
+    padding-top: 20px;
+    text-align: center;
+    color: #0f766e;
+    font-weight: bold;
+}
+
+ /* SUCCESS MESSAGE */
+.success-message {
+    color: #0f766e;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+ul {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.signin-card {
+    padding: 25px;
+    min-height: 500px;
+}
+}
+.art{
+    font-size: 40px;
+    background-color: #ffff;
+    color:#0f1724;
+    box-shadow: 0 5px 15px #14b6a6;
+    margin:1px;
+    text-align: center;
+    
+}
+
+.artvista-logo {
+    width: 50px;
+    height: 50px;
+    border: 0px solid ;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 8px 25px #14b6a6;
+}
+
+.logo-icon {
+    font-size: 10px;
+    
+}
+
+.logo-name {
+    font-family: Georgia, serif;
+    font-size: 8px;
+    font-weight: bold;
+    font-style: italic;
+    color: #475569;
+}
+
+.logo-subtitle {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 2px;
+    letter-spacing: 3px;
+    color: #0f766e;
+        }
+
+div a {
+    text-decoration: none;
+    font-size: 20px;
+}
+.n {
+    font-size: 5px;
+    padding: 2px;
+}
+.A {
+    width:100%;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8fafc;
+    color: #334155;
+    box-shadow: 0 5px 15px #14b6a6;
+    h1 {
+        margin-top: 0px;
+        text-align: center;
+        padding-left: 20px;
+        font-size: 50px;
+        font-weight: bold;
+        font-style:italic;
+        font-family: cursive;
+        text-shadow:
+        0 0 10px #14b6a6,
+        0 0 25px #14b6a6,
+        0 0 45px #14b6a6;
+    }
+}
+h1 {
+    text-shadow:
+        0 0 10px #14b6a6,
+        0 0 25px #14b6a6,
+        0 0 45px #14b6a6;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 30px;
+    text-align: center;
+    background-color: #0f766e;
+    color: #f8fafc;
+}
+footer h3 {
+    font-size: 24px;
+    color: #f8fafc;
+    text-shadow:
+        0 0 10px #14b6a6,
+        0 0 25px #14b6a6,
+        0 0 45px #14b6a6;
+}
+footer p {
+    font-size: 24px;
+    color: #f8fafc;
+    text-shadow:
+        0 0 10px #14b6a6,
+        0 0 25px #14b6a6,
+        0 0 45px #14b6a6;
+}
+
+.signin-card h2 {
+    text-align: center;
+    color: #f8fafc;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 10px 0 15px;
+
+    text-shadow:
+        0 0 10px #14b6a6,
+        0 0 20px #14b6a6;
+}
+</style>
+</head>
+<body>
+<!--LOADING-->
+<div id="loading">
+    loading...
+</div>
+
+<!--MAIN WEBSITE-->
+<div id="main">
+
+<!-- NAVIGATION -->
+<div class="A">
+
+    <div class="artvista-logo">
+        <div class="logo-icon">🎨</div>
+        <div class="logo-name">ArtVista</div>
+        <div class="logo-subtitle">ONLINE ART GALLERY</div>
+        <a class="n" href="No. 2 Content.html">🔘</a>
+        
+    </div>
+    <h1>Artvista</h1>
+
+</div>
+<nav>
+    <ul>
+        <li>
+            <a href="#" onclick="showHome()">Home</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="showImage()">Image</a>
+            
+        </li>
+
+        <li>
+            <a href="#" onclick="showAbout()">About Me</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="showSignin()">Sign In</a>
+        </li>
+        
+    </ul>
+
+</nav>
+
+<!--HOME-->
+<div id="homeSection" class="page-section">
+<h1 style="text-align:center; color:#f9fafc;">Welcome to My Website.</h1>
+<p style="text-align:center; color:#fbfdfc;">Explore the beauty of art,creativity and imagination.</h3></p>
+<!--1. Painting-->
+<div class="boxes">
+<div class="box">
+    <h2>Painting</h2>
+    <h3 class="red">Artist:- Ravi Raj Varma</h3>
+    <img src="All types img/Ravi.png" alt="Painting">
+    <h4>Art created using colors, brushes, and different techniques.</h4>
+</div>
+
+<!--2. Artwork-->
+<div class="box">
+    <h2>Artwork</h2>
+    <h3>Artist:- Vincent Van Gogh</h3>
+    <img src="All types img/night.png" alt="Artwork">
+    <h4>Creative works made to express  the ideas and imagination.</h4>
+</div>
+
+<!--3. Sketching-->
+<div class="box">
+    <h2>Sketching</h2>
+    <h3>Artist:- Sneha Patel</h3>
+    <img src="All types img/g.jpeg" alt="Sketching">
+    <h4>Drawing made with lines, shades, and simple details.</h4>
+</div>
+
+<!--4. Sclupture-->
+<div class="box">
+    <h2>Sclupture</h2>
+    <h3>Artist:- Ramkinkar Baij</h3>
+    <img src="All types img/face.png" alt="Sketching">
+    <h4>Three-dimensional art shaped from materials like stone, clay, or metal.</h4>
+</div>
+
+<!--5. Potery Ceramic Art-->
+<div class="box">
+    <h2>Potery Ceramic Art</h2>
+    <h3>Artist:- Jyotsna Bhatt</h3>
+    <img src="All types img/20.png" alt="Sketching">
+    <h4>Art created by shaping and firing clay into objects..</h4>
+</div>
+
+<!--6. Textile/Fiber Art-->
+<div class="box">
+    <h2>Textile/Fiber Art</h2>
+    <h3>Mrinalini Mukherjee</h3>
+    <img src="All types img/queen.png" alt="Sketching">
+    <h4>Art made using fabric, threads, fibers, and weaving techniques.</h4>
+</div>
+
+<!--7. Printmaking-->
+<div class="box">
+    <h2>Printmaking</h2>
+    <h3>katsushika hokusai</h3>
+    <img src="All types img/sea.png" alt="Sketching">
+    <h4>Art created by transferring designs onto paper or other surfaces.</h4>
+</div>
+
+<!--8.Calligraphy-->
+<div class="box">
+    <h2>Calligraphy</h2>
+    <h3>Xu Bing</h3>
+    <img src="All types img/eagle.png" alt="Sketching">
+    <h4>Decorative and artistic writing using creative lettering styles.</h4>
+</div>
+
+<!--9. Mixed Media Art-->
+<div class="box">
+    <h2>Mixed media Art</h2>
+    <h3>Pablo Picasso</h3>
+    <img src="All types img/art.png" alt="Sketching">
+    <h4>Art combining different materials and artistic techniques.</h4>
+</div>
+
+<!--10. Digital Art-->
+<div class="box">
+    <h2>Digital Art</h2>
+    <h3>Mike Winkelmann (Beeple)</h3>
+    <img src="All types img/blue wave.png" alt="Sketching">
+    <h4>Artwork created using digital tools, software, and technology.</h4>
+    
+</div>
+</div>
+<footer>
+    <h3>Thank You for Using ArtVista! 🎨</h3>
+    <p>Thank you for exploring our website and discovering the beauty of art.</p>
+    <p>© 2026 ArtVista. All Rights Reserved.</p>
+</footer>
+</div>
+
+<!--IMAGE-->
+
+<div id="imageSection" class="page-section">
+<div id="artist-list">
+    <h2>Artists & Collections</h2>
+    <h2>There are 10 diffenrts types of artwork are display here with different artist</h2>
+<!--Painting-->
+    <div class="image-box">
+        <div class="artist-name">1. Ravi raj varma</div>
+
+        <a href="artist arts/(1) Ravirajvarma.html" class="explore-link">
+            Explore Paintings
+        </a>
+<div class="square">
+            <a href="all Artist/ravi.html">Bio</a>
+        </div>
+    </div>
+
+
+<!--Artwork-->
+    <div class="image-box">
+        <div class="artist-name">2. Vincent van gogh</div>
+
+        <a href="artist arts/(2) Vincent.html" class="explore-link">
+            Explore Artworks
+        </a>
+
+        <div class="square">
+            <a href="all Artist/vincent.html">Bio</a>
+        </div>
+    </div>
+
+<!--Skecthing-->
+    <div class="image-box">
+        <div class="artist-name">3. Patel Sneha</div>
+
+        <a href="artist arts/(3) My artwork.html" class="explore-link">
+            Explore Skecthing
+        </a>
+
+        <div class="square">
+            <a href="all Artist/sneha.html">Bio</a>
+        </div>
+    </div>
+
+
+<!--Sclupture -->
+    <div class="image-box">
+        <div class="artist-name">4. Ramkinkar Baij</div>
+
+        <a href="artist arts/(4) Ram.html" class="explore-link">
+            Explore Sclupture
+        </a>
+
+        <div class="square">
+            <a href="all Artist/Ram.html">Bio</a>
+        </div>
+    </div>
+
+
+<!--Potery ceramic art -->
+    <div class="image-box">
+        <div class="artist-name">5. Jyotsna Bhatt</div>
+
+        <a href="Sketching.html" class="explore-link">
+            Explore Potery ceramic art
+        </a>
+
+        <div class="square">
+            <a href="all Artist/jyotsna.html">Bio</a>
+        </div>
+    </div>
+
+<!--Textile/Fiber Art-->
+<div class="image-box">
+        <div class="artist-name">6. Mrinalini Mukherjee</div>
+
+        <a href="Sketching.html" class="explore-link">
+            Explore Textile/Fiber Art
+        </a>
+
+        <div class="square">
+            <a href="all Artist/mrinalini.html">Bio</a>
+        </div>
+    </div>
+
+<!--Printmaking -->
+<div class="image-box">
+        <div class="artist-name">7. katsushika hokusai</div>
+
+        <a href="Sketching.html" class="explore-link">
+            Explore Printmaking 
+        </a>
+
+        <div class="square">
+            <a href="all Artist/katsu.html">Bio</a>
+        </div>
+    </div>
+
+<!--Calligraphy-->
+    <div class="image-box">
+        <div class="artist-name">8. xu Bing</div>
+
+        <a href="Sketching.html" class="explore-link">
+            Explore Calligraphy
+        </a>
+
+        <div class="square">
+            <a href="all Artist/xu.html">Bio</a>
+        </div>
+    </div>
+<!--Mixed media art-->
+    <div class="image-box">
+        <div class="artist-name">9. Pablo Picasso</div>
+
+        <a href="Sketching.html" class="explore-link">
+            Explore Mixed meida Art
+        </a>
+
+        <div class="square">
+            <a href="all Artist/pablo.html">Bio</a>
+        </div>
+    </div>
+
+<!--Digital Art-->
+      <div class="image-box">
+        <div class="artist-name">10. Mike Winkelmann (Beeple)</div>
+
+        <a href="Sketching.html" class="explore-link">
+            Explore Digital Art
+        </a>
+
+        <div class="square">
+            <a href="all Artist/mike.html">Bio</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--ABOUT ME-->
+<div id="aboutSection" class="page-section">
+<div class="about-box">
+    <h2>About Me</h2>
+    <p><b>I am Maitri Patel</b><br>a college student interested in art, creativity, and web development. I created ArtVista as an online art gallery to present artworks in simple, attractive, and organized way.</p>
+    <h2>Contact Information</h2>
+    <b>📞 Contact No.:</b>
+        <span class="hidden-contact" onclick="showContact()">8160951967</span>
+    </b>
+    <br>
+    <br>
+    <b>📧 Email:</b>               
+        <span class="hidden-contact" onclick="showContact()">maitripatelhr14@gmail.com</span>
+    </b>
+    <br>
+    <b>Click on the blurred information to view it.</b>
+    <br>
+    <br>
+    <button onclick="resetContact()">Reset</button>
+    <br>
+    <br>
+
+</div>
+</div>
+<!--SIGN IN-->
+<div id="signinSection" class="page-section">
+<div class="signin-card">
+
+<!--LOGIN SCREEN-->
+<div id="loginScreen">
+<div class="signin-logo">ArtVista</div>
+    <h2>Sign in</h2>
+    <p class="signin-description">Sign in to continue to ArtVista.</p>
+    <input type="text" id="loginInput" class="login-input" placeholder="Email or phone">
+    <span class="login-link" onclick="showPhoneScreen()">Forgot email?</span>
+<div class="create-area">
+    <span class="login-link" onclick="showCreateScreen()">Create account</span>
+</div>
+<button class="next-button" onclick="loginNext()">Next</button>
+    <p id="loginMessage" class="message"> </p>
+</div>
+
+<!--PASSWORD SCREEN-->
+<div id="passwordLoginScreen" style="display:none;">
+<div class="signin-logo">ArtVista</div>
+    <h2>Create a password</h2>
+    <p class="signin-description">Enter a password to continue to ArtVista.</p>
+    <input
+        type="password"
+        id="loginPassword"
+        class="login-input"
+        placeholder="Create a password">
+    <button class="next-button" onclick="finishLogin()">Next</button>
+    <p class="back-link" onclick="showLoginScreen()">← Back</p>
+
+<!--SUCCESS MESSAGE-->
+    <p id="passwordLoginMessage" class="success-message"></p>
+</div>
+
+<!--PHONE SCREEN-->
+<div id="phoneScreen" style="display:none;">
+<div class="signin-logo">ArtVista</div>
+    <h2>Sign in</h2>
+    <p class="signin-description">Enter your phone number.</p>
+    <input
+        type="tel"
+        id="phoneInput"
+        class="login-input"
+        placeholder="+91XXXXXXXXXX"  Enter Your Password maxlength="10" minilength="25">
+
+<button class="next-button" onclick="phoneNext()">Next</button>
+    <p class="back-link" onclick="showLoginScreen()">← Back to sign in</p>
+    <p id="phoneMessage" class="message"></p>
+</div>
+
+<!--CREATE ACCOUNT-->
+<div id="createScreen" style="display:none;">
+<div class="signin-logo">ArtVista</div>
+    <h2>Create account</h2>
+
+<!-- NAME -->
+<div id="nameStep">
+    <p class="signin-description">Enter your name.</p>
+    <input 
+        type="text"
+        id="newName"
+        class="login-input"
+        placeholder="Enter your name">
+    <button class="next-button" onclick="nameNext()">Next</button>
+</div>
+
+<!-- EMAIL -->
+<div
+    id="emailStep"
+    style="display:none;">
+    <p class="signin-description">Enter your email.</p>
+    <input
+        type="email"
+        id="newEmail"
+        class="login-input"
+        placeholder="Enter your email">
+    <button class="next-button" onclick="emailNext()">Next</button>
+</div>
+
+<!-- PASSWORD -->
+<div
+    id="passwordStep"
+    style="display:none;">
+    <p class="signin-description">Create your password.</p>
+    <input
+        type="password"
+        id="newPassword"
+        class="login-input"
+        placeholder="Create password " maxlength="8" minilength="8">
+    <button class="next-button" onclick="createAccount()">Create account</button>
+</div>
+    <p class="back-link" onclick="showLoginScreen()">← Back to sign in</p>
+    <p id="createMessage" class="message"></p> 
+</div>
+</div>
+</div>
+</div>
+
+<!--JAVASCRIPT-->
+<script>
+/*HIDE ALL*/
+function hideAll() {
+    document.getElementById("homeSection").style.display =
+        "none";
+    document.getElementById("imageSection").style.display =
+        "none";
+    document.getElementById("aboutSection").style.display =
+        "none";
+    document.getElementById("signinSection").style.display =
+        "none";
+}
+
+/*HOME*/
+function showHome() {
+    hideAll();
+    document.getElementById("homeSection").style.display =
+        "block";
+}
+
+/*IMAGE*/
+function showImage() {
+    hideAll();
+    document.getElementById("imageSection").style.display =
+        "block";
+}
+window.addEventListener("load", function () {
+
+    if (window.location.hash === "#imageSection") {
+        showImage();
+    }
+
+});
+
+/*ABOUT*/
+function showAbout() {
+    hideAll();
+    document.getElementById("aboutSection").style.display =
+        "block";
+
+}
+
+/*SIGN IN*/ 
+function showSignin() {
+    hideAll();
+    document.getElementById("signinSection").style.display =
+        "block";
+}
+
+/*LOGIN SCREEN Back */
+function showLoginScreen() {
+    document.getElementById("loginScreen").style.display =
+        "block";
+    document.getElementById("passwordLoginScreen").style.display =
+        "none";
+    document.getElementById("phoneScreen").style.display =
+        "none";
+    document.getElementById("createScreen").style.display =
+        "none";
+}
+
+/*EMAIL/PHONE → PASSWORD*/
+function loginNext() {
+    let value =
+        document.getElementById("loginInput").value.trim();
+    if (value === "") {
+        document.getElementById("loginMessage").innerText =
+            "Please enter your email or phone.";
+        return;
+}
+
+/* Hide first screen */
+    document.getElementById("loginScreen").style.display =
+        "none";
+/* Show password screen */
+    document.getElementById("passwordLoginScreen").style.display =
+        "block";
+}
+
+/*PASSWORD → LOGIN SUCCESSFUL*/
+function finishLogin() {
+    let password =
+        document.getElementById("loginPassword").value.trim();
+    if (password === "") {
+        document.getElementById("passwordLoginMessage").innerText =
+            "Please enter your password.";
+        return;
+}
+
+/* LOGIN SUCCESSFUL */
+    document.getElementById("passwordLoginMessage").innerText =
+        "Login successful! 🎉";
+}
+
+/*FORGOT EMAIL → PHONE*/
+function showPhoneScreen() {
+    document.getElementById("loginScreen").style.display =
+        "none";
+    document.getElementById("passwordLoginScreen").style.display =
+        "none";
+    document.getElementById("phoneScreen").style.display =
+        "block";
+    document.getElementById("createScreen").style.display =
+        "none";
+}
+
+/*PHONE NEXT*/
+function phoneNext() {
+    let phone =
+        document.getElementById("phoneInput").value.trim();
+    if (phone === "") {
+        document.getElementById("phoneMessage").innerText =
+            "Please enter your phone number.";
+        return;
+}
+    document.getElementById("phoneMessage").innerText =
+        "Phone number entered successfully!";
+}
+
+/*CREATE ACCOUNT*/
+function showCreateScreen() {
+    document.getElementById("loginScreen").style.display =
+        "none";
+    document.getElementById("passwordLoginScreen").style.display =
+        "none";
+    document.getElementById("phoneScreen").style.display =
+        "none";
+    document.getElementById("createScreen").style.display =
+        "block";
+}
+
+/*NAME → EMAIL*/
+function nameNext() {
+    let name =
+        document.getElementById("newName").value.trim();
+    if (name === "") {
+        document.getElementById("createMessage").innerText =
+            "Please enter your name.";
+        return;
+}
+    document.getElementById("nameStep").style.display =
+        "none";
+
+    document.getElementById("emailStep").style.display =
+        "block";
+}
+
+/*EMAIL → PASSWORD*/
+function emailNext() {
+    let email =
+        document.getElementById("newEmail").value.trim();
+    if (email === "") {
+        document.getElementById("createMessage").innerText =
+            "Please enter your email.";
+        return;
+    }
+    document.getElementById("emailStep").style.display =
+        "none";
+    document.getElementById("passwordStep").style.display =
+        "block";
+}
+
+/*CREATE ACCOUNT*/
+function createAccount() {
+    let password =
+        document.getElementById("newPassword").value;
+    if (password.length < 6) {
+        document.getElementById("createMessage").innerText =
+            "Password must contain at least 6 characters.";
+        return;
+    }
+    document.getElementById("createMessage").innerText =
+        "Account created successfully! 🎉";
+}
+
+/*CONTACT*/
+function showContact() {
+    document
+        .querySelectorAll(".hidden-contact")
+        .forEach(function(contact) {
+            contact.classList.add("show");
+        });
+}
+function resetContact() {
+    document
+        .querySelectorAll(".hidden-contact")
+        .forEach(function(contact) {
+            contact.classList.remove("show");
+        });
+}
+
+/*LOADING*/
+setTimeout(function() {
+    document.getElementById("loading").style.display =
+        "none";
+    document.getElementById("main").style.display =
+        "block";
+}, 2000);
+</script>
+</body>
+</html>
