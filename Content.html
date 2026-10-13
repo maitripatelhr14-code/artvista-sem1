@@ -1,8 +1,374 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 <title>ArtVista</title>
 <style>
+
+/* ==================================
+   ARTVISTA - MOBILE RESPONSIVENESS
+   ================================== */
+
+/* Prevent unwanted horizontal scrolling */
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+#main,
+.page-section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* HEADER */
+.A {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 14px;
+    gap: 12px;
+}
+
+.A h1 {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0 5px;
+    font-size: clamp(28px, 6vw, 50px);
+    overflow-wrap: anywhere;
+}
+
+.artvista-logo {
+    flex-shrink: 0;
+}
+
+/* NAVIGATION */
+nav {
+    width: 100%;
+    padding: 0;
+}
+
+nav ul {
+    width: 100%;
+    min-width: 0;
+    gap: 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    white-space: normal;
+    padding: 14px 4px;
+}
+
+nav ul li {
+    padding: 8px 5px;
+}
+
+nav ul li a {
+    font-size: clamp(13px, 3.5vw, 17px);
+}
+
+/* HOME SECTION */
+#homeSection {
+    width: 100%;
+    padding: 18px 14px;
+}
+
+#homeSection > h1 {
+    font-size: clamp(25px, 6vw, 42px);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+#homeSection > p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* ARTIST CARDS */
+.boxes {
+    width: 100%;
+    max-width: 1100px;
+    margin: 28px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.box {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+    overflow-wrap: break-word;
+}
+
+.box h2 {
+    padding: 18px !important;
+    font-size: 22px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.box h3 {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.box h4 {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.box img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* IMAGE SECTION */
+#imageSection {
+    width: 100%;
+    padding: 20px 12px;
+}
+
+#artist-list > h2 {
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+
+.image-box {
+    width: 100%;
+    max-width: 600px;
+    min-height: 125px;
+    height: auto;
+    padding: 16px 12px;
+    gap: 8px;
+    overflow-wrap: anywhere;
+}
+
+.artist-name {
+    font-size: clamp(16px, 4vw, 22px);
+    text-align: center;
+}
+
+.explore-link {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+.square {
+    width: 90px;
+    height: 42px;
+    margin: 8px auto 0;
+    transform: none;
+}
+
+.square a {
+    font-size: 17px;
+}
+
+/* ABOUT SECTION */
+#aboutSection {
+    padding: 20px 14px;
+}
+
+.about-box {
+    width: 100%;
+    max-width: 600px;
+    padding: 24px 18px;
+    overflow-wrap: anywhere;
+}
+
+.about-box p {
+    font-size: 16px;
+}
+
+/* SIGN IN */
+#signinSection {
+    padding: 20px 12px 40px;
+}
+
+.signin-card {
+    width: 100%;
+    max-width: 430px;
+    min-width: 0;
+    min-height: 0;
+    padding: 28px 20px;
+}
+
+.signin-card h2 {
+    font-size: 26px;
+}
+
+.login-input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.create-area {
+    margin-top: 45px;
+}
+
+.next-button {
+    max-width: 100%;
+}
+
+/* FOOTER */
+footer {
+    padding: 24px 16px;
+    overflow-wrap: anywhere;
+}
+
+footer h3 {
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+footer p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* SMALL PHONES */
+@media screen and (max-width: 600px) {
+
+    .A {
+        gap: 8px;
+        padding: 12px 10px;
+    }
+
+    .artvista-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .A h1 {
+        font-size: clamp(26px, 8vw, 38px);
+        text-shadow: 0 0 10px #14b6a6;
+    }
+
+    nav ul {
+        justify-content: space-around;
+        gap: 2px;
+        padding: 10px 2px;
+    }
+
+    nav ul li {
+        padding: 9px 4px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    /* One large card per row */
+    .boxes {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 0;
+    }
+
+    .box {
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    .box h2 {
+        padding: 20px 12px !important;
+        font-size: 24px;
+    }
+
+    .box h3 {
+        font-size: 18px;
+    }
+
+    .box h4 {
+        font-size: 16px;
+    }
+
+    .box img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
+
+    #homeSection > p {
+        font-size: 15px;
+    }
+
+    .signin-card {
+        padding: 24px 18px;
+    }
+
+    .signin-logo {
+        font-size: 28px;
+    }
+
+    .signin-card h2 {
+        font-size: 24px;
+    }
+
+    .login-input {
+        height: 52px;
+        font-size: 16px;
+    }
+
+    .next-button {
+        padding: 12px 22px;
+    }
+}
+
+/* VERY SMALL PHONES */
+@media screen and (max-width: 360px) {
+
+    #homeSection {
+        padding: 14px 9px;
+    }
+
+    .A {
+        padding: 10px 7px;
+    }
+
+    .artvista-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .A h1 {
+        font-size: 25px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .box {
+        padding: 13px;
+    }
+
+    .box img {
+        height: 210px;
+    }
+
+    .about-box {
+        padding: 20px 13px;
+    }
+
+    .signin-card {
+        padding: 22px 14px;
+    }
+}
+
 *{ 
     box-sizing: border-box;
 }
